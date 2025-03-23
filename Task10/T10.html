@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Management Stack</title>
+    <style>    
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .content {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        #taskDisplay {
+            
+            padding: 10px;
+            margin-top: 10px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        
+        <input type="text" id="newTask" placeholder="Type a Task">
+        <button onclick="addNewTask()">Add Task</button>
+        <button onclick="removeLastTask()">Undo Task</button>
+        <h1>Process Line</h1>
+        <div id="taskDisplay"></div>
+        
+    </div>
+    <script>
+        let taskArray = [];
+
+        function displayTasks() {
+            const taskContainer = document.getElementById('taskDisplay');
+            let formattedTasks = taskArray.map(task => task.split('').join(', ')); 
+            taskContainer.innerHTML = formattedTasks.join(' , ');
+        }
+
+        function addNewTask() {
+            const taskName = document.getElementById('newTask').value;
+            if (taskName) {
+                taskArray.push(taskName);
+                document.getElementById('newTask').value = '';
+                displayTasks();
+            }
+        }
+
+        function removeLastTask() {
+            taskArray.pop();
+            displayTasks();
+        }
+    </script>
+</body>
+</html>

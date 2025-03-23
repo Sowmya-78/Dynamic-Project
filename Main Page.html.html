@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Style Project</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: 10% 90%;
+        }
+        .header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 20% 80%;
+            height: 100%;
+        }
+        .sidebar {
+            background-color: #4a4a4a;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            cursor: pointer;
+            width: 100%;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #6a6a6a;
+            border-radius: 5px;
+        }
+        .content-section {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        #content-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Dynamic Style Project</div>
+    <div class="container">
+        <div class="sidebar">
+            <a onclick="loadContent('Task2')">Task 1 Basic HTML Styling</a>
+            <a onclick="loadContent('Task3')">Task 2 CSS Hover</a>
+            <a onclick="loadContent('Task4')">Task 3 Welcome to JS</a>
+            <a onclick="loadContent('Task5')">Task 4 Calculator with JS</a>
+            <a onclick="loadContent('Task8')">Task 5 String Operation</a>
+            <a onclick="loadContent('Task9')">Task 6 Conditions</a>
+            <a onclick="loadContent('Task10')">Task 7 Call-Stack with Array</a>
+            <a onclick="loadContent('Task11')">Task 8 Star with loops</a>
+            <a onclick="loadContent('Task12')">Task 9 Class Work</a>
+            <a onclick="loadContent('Task13')">Task 10 Class Work-Objects</a>
+            <a onclick="loadContent('Task14')">Task 11 Class Work-Objects-2</a>
+            <a onclick="loadContent('Task15')">Task 12 Class Work -Class & Bootstrap</a>
+        </div>
+        
+        <div class="content-section">
+            <iframe id="content-frame" src=""></iframe>
+        </div>
+    </div>
+    <script>
+        const content = {
+            Task2: 'Task2/index (2).html',
+            Task3: 'Task3/Task.html',
+            Task4: 'Task4/A1.html',
+            Task5: 'Task5/Example1 (1).html',
+            Task8: 'Task8/task-8.html',
+            Task9: 'Task9/calculator.html',
+            Task10: 'Task10/T10.html',
+            Task11: 'Task11/task11 (2).html',
+            Task12: 'Task12/task12.html',
+            Task13: 'Task13/task12-2.html',
+            Task14: 'Task14/task13.html',
+            Task15: 'Task15/AgeCalculator.html'
+        };
+        function loadContent(page) {
+            document.getElementById('content-frame').src = content[page] || '404.html';
+        }
+    </script>
+</body>
+</html>

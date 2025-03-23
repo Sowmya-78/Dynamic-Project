@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Star Pattern Generator</title>
+</head>
+<body>
+    <h2>Pattern Generator</h2>
+    <input type="number" id="numInput" placeholder="Enter a number" onkeyup="createPattern()"/>
+    <pre id="output"></pre>
+
+    <script>
+        function createPattern() {
+            let num = document.getElementById('numInput').value;
+            let result = '';
+            for (let i = 1; i <= num; i++) {
+                result += '*'.repeat(i) + '\n';
+            }
+            document.getElementById('output').textContent = result;
+        }
+    </script>
+</body>
+</html>

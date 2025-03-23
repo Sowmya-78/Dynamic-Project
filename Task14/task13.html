@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+ 
+    <title>Student Information System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #af4c7a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        input {
+            width: 60%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .add-btn {
+            background-color: #4CAF50;
+        }
+
+        .clear-btn {
+            background-color: #5236f4;
+        }
+
+
+        .student-info {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .student-info h3 {
+            margin: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .student-details {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .student-details span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Student Information System</h1>
+
+    <table>
+        <tr>
+            <td><input id="studentName" placeholder="Student Name"></td>
+            <td><input id="studentId" placeholder="Student ID"></td>
+        </tr>
+        <tr>
+            <td><input id="studentMajor" placeholder="Major"></td>
+            <td><input id="studentCourse" placeholder="Course"></td>
+        </tr>
+
+    </table>
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin: 20px;">
+
+        <button onclick="insert();" class="add-btn">Add Students</button>
+        <button onclick="clear_input();" class="clear-btn">Clear Inputs</button>
+</div>
+
+    <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin: 20px;">
+
+        <button onclick="displayStudentInfo();" class="add-btn">Show All Students</button>
+        <button onclick="clear_display();" class="clear-btn">Clear Display</button>
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin: 20px;">
+        <input id="search_name" placeholder="Enter student name" style="width: 10%;font-size: 16px;">
+        <button onclick="search_student();" class="search-btn" style="padding: 10px 20px;font-size: 16px; cursor: pointer; background-color: #2196F3; color: white;">
+            Search
+        </button>
+    </div>
+
+    <div id="demo_div" style="width: 80%; margin: 20px auto;gap: 10px; margin: 20px;">
+    </div>
+
+       
+
+    <script src="stud.js"></script>
+</body>
+</html>

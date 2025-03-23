@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <input type="date" id="dob">
+    <p id="ageDisplay"></p>
+
+    <script>
+        function calculateAge(dob) {
+            const today = new Date();
+            const birthDate = new Date(dob);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+
+        
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            return age;
+        }
+        document.getElementById('dob').addEventListener('change', function() {
+            const age = calculateAge(this.value);
+            document.getElementById('ageDisplay').innerText = `You are ${age} years old.`;
+        });
+    </script>
+</body>
+</html>
