@@ -1,87 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Style Project</title>
     <style>
         body {
             margin: 0;
             height: 100vh;
             display: grid;
-            grid-template-rows: 10% 90%;
+            grid-template-rows: 12% 88%;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
         }
+        /* Header Section */
         .header {
-            background-color: black;
-            color: white;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-        }
+    background-color: rgb(135, 152, 250); /* Light blue background */
+    text-align: center;
+    color: white; /* Black text color */
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+
+        
+        
+
         .container {
             display: grid;
-            grid-template-columns: 20% 80%;
+            grid-template-columns: 25% 75%;
             height: 100%;
         }
+
+        
         .sidebar {
-            background-color: #4a4a4a;
+            background: #333;
             padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             align-items: flex-start;
         }
+        
         .sidebar a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            padding: 10px 15px;
-            cursor: pointer;
+            padding: 12px 18px;
             width: 100%;
             display: block;
+            background: rgb(135, 152, 250); 
+            border-radius: 6px;
+            transition: all 0.3s ease-in-out;
+            text-align: center;
         }
+
         .sidebar a:hover {
-            background-color: #6a6a6a;
-            border-radius: 5px;
+            background: black; 
+            transform: scale(1.05);
+            box-shadow: 0px 4px 8px rgba(255, 30, 0, 0.4);
         }
+
+        /* Content Section - Styled Box */
         .content-section {
-            background-color: white;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
         }
+
+        .output-box {
+            width: 90%;
+            height: 90%;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Task Title Styling */
+        .task-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: rgb(135, 152, 250);
+            margin-bottom: light red;
+            text-align: center;
+            border-bottom: 2px solid #ff4b2b;
+            padding-bottom: 5px;
+            width: 100%;
+        }
+
         #content-frame {
             width: 100%;
             height: 100%;
             border: none;
+            flex-grow: 1;
         }
+
     </style>
 </head>
 <body>
-    <div class="header">Dynamic Style Project</div>
+    <div class="header">Project</div>
+
     <div class="container">
         <div class="sidebar">
-            <a onclick="loadContent('Task2')">Task 1 Basic HTML Styling</a>
-            <a onclick="loadContent('Task3')">Task 2 CSS Hover</a>
-            <a onclick="loadContent('Task4')">Task 3 Welcome to JS</a>
-            <a onclick="loadContent('Task5')">Task 4 Calculator with JS</a>
-            <a onclick="loadContent('Task8')">Task 5 String Operation</a>
-            <a onclick="loadContent('Task9')">Task 6 Conditions</a>
-            <a onclick="loadContent('Task10')">Task 7 Call-Stack with Array</a>
-            <a onclick="loadContent('Task11')">Task 8 Star with loops</a>
-            <a onclick="loadContent('Task12')">Task 9 Class Work</a>
-            <a onclick="loadContent('Task13')">Task 10 Class Work-Objects</a>
-            <a onclick="loadContent('Task14')">Task 11 Class Work-Objects-2</a>
-            <a onclick="loadContent('Task15')">Task 12 Class Work -Class & Bootstrap</a>
+            <a onclick="loadContent('Task2', 'Basic HTML Styling')">🔹 Task 1: Basic HTML Styling</a>
+            <a onclick="loadContent('Task3', 'CSS Hover Effects')">🔹 Task 2: CSS Hover Effects</a>
+            <a onclick="loadContent('Task4', 'Welcome to JavaScript')">🔹 Task 3: Welcome to JS</a>
+            <a onclick="loadContent('Task5', 'Calculator with JavaScript')">🔹 Task 4: Calculator with JS</a>
+            <a onclick="loadContent('Task8', 'String Operation')">🔹 Task 5: String Operation</a>
+            <a onclick="loadContent('Task9', 'Conditions')">🔹 Task 6: Conditions</a>
+            <a onclick="loadContent('Task10', 'Call-Stack with Array')">🔹 Task 7: Call-Stack with Array</a>
+            <a onclick="loadContent('Task11', 'Star with Loops')">🔹 Task 8: Star with Loops</a>
+            <a onclick="loadContent('Task12', 'Class Work')">🔹 Task 9: Class Work</a>
+            <a onclick="loadContent('Task13', 'Class Work - Objects')">🔹 Task 10: Class Work - Objects</a>
+            <a onclick="loadContent('Task14', 'Objects - Part 2')">🔹 Task 11: Objects - Part 2</a>
+            <a onclick="loadContent('Task15', 'Bootstrap & Classes')">🔹 Task 12: Bootstrap & Classes</a>
         </div>
         
         <div class="content-section">
-            <iframe id="content-frame" src=""></iframe>
+            <div class="output-box">
+                <div class="task-title" id="task-title">Select a Task to display the output in the same </div>
+                <iframe id="content-frame" src=""></iframe>
+            </div>
         </div>
     </div>
+
     <script>
         const content = {
             Task2: 'Task2/index (2).html',
@@ -97,8 +152,10 @@
             Task14: 'Task14/task13.html',
             Task15: 'Task15/AgeCalculator.html'
         };
-        function loadContent(page) {
+
+        function loadContent(page, title) {
             document.getElementById('content-frame').src = content[page] || '404.html';
+            document.getElementById('task-title').textContent = title;
         }
     </script>
 </body>
